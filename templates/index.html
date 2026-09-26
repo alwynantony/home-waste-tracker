@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home Waste Tracker | A Greener Tomorrow</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <h1>Home Waste Tracker</h1>
+
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Main Hero Section -->
+    <main>
+
+        <section class="intro">
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    🌱 YOUR JOURNEY TO A GREENER HOME
+                </p>
+
+                <h2>
+                    A Cleaner Home.
+                    <br>
+                    A <span>Greener Tomorrow.</span>
+                </h2>
+
+                <p>
+                    Track, manage, and reduce your household waste
+                    with simple tools and meaningful insights.
+                    Make every small action count towards a
+                    healthier and more sustainable future.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="{{ url_for('register') }}" class="btn">
+                        Get Started →
+                    </a>
+
+                    <a href="#features" class="btn secondary-btn">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Eco illustration -->
+            <div class="hero-illustration">
+
+                <div class="eco-circle">
+                    <div class="eco-earth">🌍</div>
+                    <div class="eco-leaf leaf-one">🌿</div>
+                    <div class="eco-leaf leaf-two">🍃</div>
+                    <div class="eco-bin">♻️</div>
+                </div>
+
+                <p class="eco-caption">
+                    Small Actions. Big Impact.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+
+            <h2>Make Your Home Greener</h2>
+
+            <p class="features-subtitle">
+                Everything you need to understand and reduce
+                your household waste.
+            </p>
+
+            <div class="features-container">
+
+                <!-- Feature 1 -->
+                <div class="feature-card">
+
+                    <div class="feature-icon">🌿</div>
+
+                    <h3>Track Your Waste</h3>
+
+                    <p>
+                        Record your daily household waste and
+                        keep all your waste entries organized
+                        in one place.
+                    </p>
+
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+
+                    <div class="feature-icon">📊</div>
+
+                    <h3>Analyze Your Impact</h3>
+
+                    <p>
+                        Visualize waste statistics and trends
+                        through charts to better understand
+                        your household waste habits.
+                    </p>
+
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+
+                    <div class="feature-icon">♻️</div>
+
+                    <h3>Build a Greener Home</h3>
+
+                    <p>
+                        Discover practical waste reduction
+                        tips and take simple steps towards
+                        a more sustainable lifestyle.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+
+            <h2>Ready to Make a Difference?</h2>
+
+            <p>
+                Start tracking your household waste today
+                and take your first step towards a cleaner home.
+            </p>
+
+            <a href="{{ url_for('register') }}" class="btn">
+                Create Your Account →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Home Waste Tracker.
+            Building a greener tomorrow, one home at a time.
+        </p>
+    </footer>
+
+</body>
+</html>

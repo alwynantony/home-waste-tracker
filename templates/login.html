@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Home Waste Tracker</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <h1>Home Waste Tracker</h1>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ url_for('home') }}">Home</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('register') }}">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Login Section -->
+    <main>
+
+        <section class="form-section">
+
+            <div class="feature-icon">🌿</div>
+
+            <h2>Welcome Back!</h2>
+
+            <p>
+                Login to continue your journey towards
+                a cleaner and greener home.
+            </p>
+
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="flash-message">
+                            {{ message }}
+                        </p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- Login Form -->
+            <form action="{{ url_for('login') }}" method="POST">
+
+                <label for="username"
+                       style="display:block; text-align:left; font-weight:600;">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="password"
+                       style="display:block; text-align:left; font-weight:600;">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" class="btn">
+                    Login to Your Account →
+                </button>
+
+            </form>
+
+            <p>
+                Don't have an account?
+                <a href="{{ url_for('register') }}">
+                    Create an Account
+                </a>
+            </p>
+
+            <p>
+                <a href="{{ url_for('home') }}">
+                    ← Back to Home
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Home Waste Tracker.
+            Building a greener tomorrow.
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Home Waste Tracker</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- JavaScript -->
+    <script defer
+            src="{{ url_for('static', filename='script.js') }}">
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <h1>Home Waste Tracker</h1>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ url_for('home') }}">Home</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('log_waste') }}">Log Waste</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Dashboard Main Content -->
+    <main class="dashboard">
+
+        <!-- Dashboard Heading -->
+        <section class="dashboard-header">
+
+            <div>
+                <p class="hero-label">YOUR PERSONAL ECO DASHBOARD</p>
+
+                <h2>Waste Analytics</h2>
+
+                <p>
+                    Track your household waste, understand your
+                    habits, and take steps towards a greener home.
+                </p>
+            </div>
+
+            <a href="{{ url_for('log_waste') }}" class="btn">
+                + Log New Waste
+            </a>
+
+        </section>
+
+
+        <!-- Statistics Cards -->
+        <section class="stats-container">
+
+            <div class="stat-card">
+                <h3>♻️ Total Waste</h3>
+
+                <h2>
+                    <span id="totalWaste">Loading...</span>
+                    <small>kg</small>
+                </h2>
+
+                <p>Your recorded household waste</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>🌿 Waste Tracking</h3>
+
+                <h2>Active</h2>
+
+                <p>Keep recording your daily waste</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>📊 Waste Records</h3>
+
+                <h2 id="recordCount">--</h2>
+
+                <p>Total entries recorded</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>🌍 Eco Journey</h3>
+
+                <h2>Growing</h2>
+
+                <p>Every small step makes a difference</p>
+            </div>
+
+        </section>
+
+
+        <!-- Waste Trends Chart -->
+        <section class="chart-container">
+
+            <h2>Waste Trends</h2>
+
+            <p>
+                Explore your waste distribution by category.
+            </p>
+
+            <div style="position: relative; height: 350px; width: 100%;">
+                <canvas id="wasteChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- Waste History -->
+        <section class="chart-container">
+
+            <h2>Waste History</h2>
+
+            <p>
+                Review your previously recorded household waste.
+            </p>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Waste Type</th>
+                            <th>Quantity (kg)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="wasteHistory">
+
+                        <tr>
+                            <td colspan="3">
+                                Loading records...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard Call to Action -->
+        <section class="cta-section">
+
+            <h2>Keep Making a Difference!</h2>
+
+            <p>
+                Small changes in your daily habits can help
+                reduce household waste and protect the planet.
+            </p>
+
+            <a href="{{ url_for('log_waste') }}" class="btn">
+                Record Waste →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Home Waste Tracker.
+            Building a greener tomorrow.
+        </p>
+    </footer>
+
+</body>
+</html>
